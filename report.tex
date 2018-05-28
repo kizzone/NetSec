@@ -45,20 +45,30 @@ Each packet contains in its payload a certain number $B$ of cryptographic blocks
 The client sequentially reads and encrypts the data from the file and sends the packets to the server. The server receives the data and proceeds to extract the blocks from the packet and decrypt them.\\
 During the process, the MD5 hash is calculated at both sides. When the transfer of the file is completed, the server sends its MD5 hash to the server, which proceeds to print if they are matching. 
 
-
+\newpage
 \section*{Testing}
 
-Per la fase di testing sono stati scambiati tramite socket varie tipologie di file destinati alla stampa (pdf,jpeg).
 
-tramite wireshark i byte sono cosi .... immagine wireshark
-
-
+During the testing phases, there were exchanged various file format (\textit{e.g. PDF, TXT, JPG }) and the received files were the same of the the sended ones with no loss of information.\\
+In Figure \ref{fig:tcp2}, thanks to Wireshark we can se the packet exchange from client to server on the testing local machine.
 
 
 
+\begin{figure}[!htb]
+	\includegraphics[width=\linewidth]{wireshark.png}
+	\caption{The TCP stream of exchanged packets}
+	\label{fig:tcp2}
+\end{figure}
 
 
 
+Even if we try to follow this TCP stream, Figure \ref{fig:tcp3 } we can't obtain any information about the original plaintext.
+
+\begin{figure}[!htb]
+	\includegraphics[width=\linewidth]{flusso.png}
+	\caption{The TCP stream shows ciphertext info}
+	\label{fig:tcp3}
+\end{figure}
 	
 	
 
