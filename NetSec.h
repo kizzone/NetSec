@@ -23,8 +23,8 @@
 #include <openssl/md5.h>
 #include <errno.h>
 //======================================================================================================================
-//#define SOURCE "foo.pdf" //define for source file to send
-//#define DEST "bar.pdf"	//define for destination file 
+#define SOURCE "foo.pdf" //define for source file to send
+#define DEST "bar.pdf"	//define for destination file 
 //======================================================================================================================
 #define DEFAULT_PORT 8000
 #define BLOCK_SIZE 16	//block size for AES encryption
